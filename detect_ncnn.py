@@ -33,30 +33,29 @@ while True:
             seconds = 0.1
 
             if size == 'l' or size == 'm':
-                # alarm.sound_alarm(size)
-                sound_arg = (size,seconds,)
+                # sound_arg = (size,seconds,)
                 # t1 = threading.Thread(target=alarm.sound_alarm, args=sound_arg)
                 alarm.sound_alarm(size, seconds)
 
                 if side == 'L':
-                    light_arg = (alarm.LR,0.1)
-                    t2 = threading.Thread(target=alarm.turn_on_led, args=light_arg)
-                    # alarm.turn_on_led(alarm.LR,0.1)
+                    # light_arg = (alarm.LR,0.1)
+                    # t2 = threading.Thread(target=alarm.turn_on_led, args=light_arg)
+                    alarm.turn_on_led(alarm.LR,0.1)
                 else:
-                    light_arg = (alarm.RR,0.1)
-                    t2 = threading.Thread(target=alarm.turn_on_led, args=light_arg)
-                    # alarm.turn_on_led(alarm.RR,0.1)
+                    # light_arg = (alarm.RR,0.1)
+                    # t2 = threading.Thread(target=alarm.turn_on_led, args=light_arg)
+                    alarm.turn_on_led(alarm.RR,0.1)
             else:
                 alarm.turn_off_led()
 
             # Start the threads
             # t1.start()
-            t2.start()
+            # t2.start()
 
             # Wait for both threads to finish   
 
             # t1.join()
-            t2.join()
+            # t2.join()
             
             print(f"The size is categorized as: {size}")
             print(f"The side is categorized as: {side}")
